@@ -1,0 +1,52 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #FF0B55;
+}
+
+.screen-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background: #0b0909;
+}
+
+.game-navbar {
+  width: 8%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-right: 1px #FF0B55 solid;
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.score-container {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px #FF0B55 solid;
+}
+
+.upgrade-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
