@@ -1,9 +1,15 @@
 html, body, #root {
+  font-family: "Leelawadee UI", sans-serif;
+
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  color: #FF0B55;
+  color: #c4ccc0;
+  font-size: 9px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .screen-container {
@@ -12,7 +18,7 @@ html, body, #root {
   flex-direction: row;
   width: 100%;
   height: 100%;
-  background: #0b0909;
+  background: #000000;
 }
 
 .game-navbar {
@@ -22,7 +28,7 @@ html, body, #root {
   flex-direction: column;
   padding: 1rem;
   box-sizing: border-box;
-  border-right: 1px #FF0B55 solid;
+  border-right: 1px #256c0f solid;
 }
 
 .game-container {
@@ -39,7 +45,7 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px #FF0B55 solid;
+  border-bottom: 1px #256c0f solid;
 }
 
 .upgrade-container {

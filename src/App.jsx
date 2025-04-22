@@ -1,6 +1,9 @@
-import {useState} from 'react'
+import Decimal from "break_infinity.js";
+import {useGameLoop} from "./core/hooks.jsx";
 
 function App() {
+    const {game, state} = useGameLoop()
+
     return (
         <div className={"screen-container"}>
             <div className={"game-navbar"}>
@@ -8,7 +11,13 @@ function App() {
             </div>
             <div className={"game-container"}>
                 <div className={"score-container"}>
-                    <h1> Score </h1>
+                    <div>
+                        <h1>Cells: {
+                            state.cells ?
+                                state.cells.round().toString() :
+                                0
+                        } </h1>
+                    </div>
                 </div>
                 <div className={"upgrade-container"}>
                     <h1> Upgrades </h1>
