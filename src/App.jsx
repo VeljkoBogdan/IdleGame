@@ -4,6 +4,7 @@ import TabBar from "./ui/TabBar.jsx";
 import {useState} from "react";
 import ContentContainerManager from "./ui/ContentContainerManager.jsx";
 import {Tabs} from "./core/tabs.jsx";
+import ScoreContainer from "./ui/ScoreContainer.jsx";
 
 function App() {
     const {game, state} = useGameLoop()
@@ -17,20 +18,9 @@ function App() {
                 setCurrentTab={setCurrentTabKey}
             />
             <div className={"game-container"}>
-                <div className={"score-container"}>
-                    <div>
-                        <h1>Cells: {
-                            state.cells ?
-                                state.cells.round().toString() :
-                                0
-                        } </h1>
-                        <p>You are gaining: {
-                            state.cellsPerSecond ?
-                                state.cellsPerSecond.round().toString() :
-                                0
-                        } cells per second</p>
-                    </div>
-                </div>
+                <ScoreContainer
+                    state={state}
+                />
                 <ContentContainerManager
                     currentTab={currentTabKey}
                     state={state}
