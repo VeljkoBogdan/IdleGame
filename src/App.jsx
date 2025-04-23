@@ -1,4 +1,3 @@
-import Decimal from "break_infinity.js";
 import {useGameLoop} from "./core/hooks.jsx";
 import TabBar from "./ui/TabBar.jsx";
 import {useState} from "react";

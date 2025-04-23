@@ -1,4 +1,5 @@
 import Decimal from "break_infinity.js";
+import Effects from "./effects/Effects.js";
 
 export class Game {
     constructor() {
@@ -7,7 +8,8 @@ export class Game {
 
     startState = {
         cells: Decimal.fromValue(0),
-        cellsPerSecond: Decimal.fromValue(1)
+        cellsPerSecond: Decimal.fromValue(1),
+        effects: []
     }
 
     state
@@ -24,7 +26,8 @@ export class Game {
         // represents a 20th part of a second, multiply gain by this number so the gain matches time
         const tick = 5 / 100
 
-        let newCellAmount = this.state.cells.add(this.state.cellsPerSecond.mul(tick))
+        let cpsWithEffects = Effects.addEffects(this.state.cellsPerSecond, this.state);
+        let newCellAmount = this.state.cells.add(cpsWithEffects.mul(tick));
 
         this.state = {
             ...this.state,
