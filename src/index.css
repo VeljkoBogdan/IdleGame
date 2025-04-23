@@ -48,11 +48,10 @@ html, body, #root {
   border-bottom: 1px #256c0f solid;
 }
 
-.upgrade-container {
+.content-container-manager {
   flex: 1;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   box-sizing: border-box;
 }
@@ -73,4 +72,9 @@ html, body, #root {
   transition: all ease-in-out 0.15s;
   background: #256c0f;
   color: black;
+}
+
+.active {
+  color: #c4ccc0;
+  background: #256c0f;
 }
