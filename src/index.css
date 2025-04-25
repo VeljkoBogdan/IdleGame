@@ -101,6 +101,7 @@ button {
 }
 
 .upgrade-button {
+  transition: all ease-in-out 0.3s;
   white-space: normal;
   line-height: 0.75;
   padding: 0 16px 0 16px;
@@ -111,10 +112,12 @@ button {
 }
 
 .purchasable {
+  transition: all ease-in-out 0.3s;
   background: #256c0f;
   border: #14ff00 1px solid;
 }
 .purchasable:hover {
+  transition: all ease-in-out 0.3s;
   background: #c4ccc0;
   border: #256c0f 1px solid;
   color: black;
