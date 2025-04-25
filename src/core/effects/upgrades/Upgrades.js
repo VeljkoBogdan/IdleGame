@@ -7,7 +7,11 @@ const Upgrades = [
         level = 0;
 
         get label() {
-            return `Multiply Cell production by ${this.amount}x\nCost: ${this.cost}`;
+            return [
+                `Multiply Cell production by 2x`,
+                `Currently: ${this.amount}x`,
+                `Cost: ${this.cost} cells`
+            ];
         }
 
         get cost() {
@@ -20,11 +24,13 @@ const Upgrades = [
 
         upgradeEffect(state) {
             if (state.cells.lt(this.cost)) return;
-            console.log("Before:", state.cells.toString());
             state.cells = state.cells.sub(this.cost);
-            console.log("After:", state.cells.toString());
             this.amount = this.amount.mul(2);
             this.level++;
+        }
+
+        canPurchase(state) {
+            return state.cells.gte(this.cost);
         }
     }()
 ];

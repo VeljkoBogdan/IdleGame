@@ -5,7 +5,7 @@ export default function CellsFragment({ state }) {
 
     return (
         <div>
-            {Upgrades.map(effect => <UpgradeButton upgrade={effect} state={state} />)}
+            {Upgrades.map(effect => <UpgradeButton key={effect.label} upgrade={effect} state={state} />)}
         </div>
     )
 }

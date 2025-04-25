@@ -25,4 +25,8 @@ export default class Effect {
     }
 
     upgradeEffect() {}
+
+    canPurchase() {
+        return true;
+    }
 }

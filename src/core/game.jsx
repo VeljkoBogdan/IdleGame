@@ -9,14 +9,11 @@ export class Game {
     startState = {
         cells: Decimal.fromValue(0),
         cellsPerSecond: Decimal.fromValue(1),
+        boostedCPS: Decimal.fromValue(1),
         effects: []
     }
 
-    state = {
-        cells: Decimal.fromValue(0),
-        cellsPerSecond: Decimal.fromValue(1),
-        effects: []
-    }
+    state = {}
 
     init() {
         this.state = this.startState
@@ -27,15 +24,11 @@ export class Game {
     }
 
     update() {
-        // represents a 20th part of a second, multiply gain by this number so the gain matches time
-        const tick = 5 / 100
+        const tick = 5 / 100;
 
-        let cpsWithEffects = Effects.addEffects(this.state.cellsPerSecond, this.state);
-        this.state.cells = this.state.cells.add(cpsWithEffects.mul(tick))
-        //
-        // this.state = {
-        //     ...this.state,
-        //     cells: newCellAmount
-        // }
+        const boostedCps = Effects.addEffects(this.state.cellsPerSecond, this.state);
+        this.state.cells = this.state.cells.add(boostedCps.mul(tick));
+        this.state.boostedCps = boostedCps;
     }
+
 }

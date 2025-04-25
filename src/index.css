@@ -11,6 +11,8 @@ html, body, #root {
   padding: 0;
   color: #c4ccc0;
 
+  line-height: 1;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -90,10 +92,30 @@ button {
 }
 
 .score-title {
-  margin-bottom: -16px;
+  margin-bottom: -8px;
 }
 .score-amount {
   font-weight: bolder;
   color: #256c0f;
   text-shadow: #14ff00 0 0 64px;
+}
+
+.upgrade-button {
+  white-space: normal;
+  line-height: 0.75;
+  padding: 0 16px 0 16px;
+  border-radius: 0;
+  border: 1px #256c0f solid;
+  background: black;
+  color: #c4ccc0;
+}
+
+.purchasable {
+  background: #256c0f;
+  border: #14ff00 1px solid;
+}
+.purchasable:hover {
+  background: #c4ccc0;
+  border: #256c0f 1px solid;
+  color: black;
 }

@@ -16,8 +16,8 @@ export default function ScoreContainer({ state }) {
                 </h1>
                 <p>
                     You are gaining: {
-                    state.cellsPerSecond ?
-                        state.cellsPerSecond.round().toString() :
+                    state.boostedCps ?
+                        state.boostedCps.round().toString() :
                         0
                 } cells per second</p>
             </div>
