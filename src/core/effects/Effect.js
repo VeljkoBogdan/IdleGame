@@ -6,6 +6,10 @@ export default class Effect {
         return "Default Effect Label"
     }
 
+    get cost() {
+        return Decimal.fromValue(0)
+    }
+
     /**
      * @param {Decimal} value
      */

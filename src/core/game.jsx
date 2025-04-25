@@ -12,7 +12,11 @@ export class Game {
         effects: []
     }
 
-    state
+    state = {
+        cells: Decimal.fromValue(0),
+        cellsPerSecond: Decimal.fromValue(1),
+        effects: []
+    }
 
     init() {
         this.state = this.startState
@@ -27,11 +31,11 @@ export class Game {
         const tick = 5 / 100
 
         let cpsWithEffects = Effects.addEffects(this.state.cellsPerSecond, this.state);
-        let newCellAmount = this.state.cells.add(cpsWithEffects.mul(tick));
-
-        this.state = {
-            ...this.state,
-            cells: newCellAmount
-        }
+        this.state.cells = this.state.cells.add(cpsWithEffects.mul(tick))
+        //
+        // this.state = {
+        //     ...this.state,
+        //     cells: newCellAmount
+        // }
     }
 }

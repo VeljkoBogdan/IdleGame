@@ -6,27 +6,32 @@ import {Tabs} from "./core/tabs.jsx";
 import ScoreContainer from "./ui/ScoreContainer.jsx";
 
 function App() {
-    const {game, state} = useGameLoop()
-    const [currentTabKey, setCurrentTabKey] = useState(Tabs[0].key)
+    const { gameRef, state } = useGameLoop();
+    const [currentTabKey, setCurrentTabKey] = useState(Tabs[0].key);
+
+    const game = gameRef.current;
+
+    if (!game || !game.state) return null; // wait for game to initialize
 
     return (
-        <div className={"screen-container"}>
+        <div className="screen-container">
             <TabBar
-                gameState={state}
+                gameState={game.state}
                 currentTab={currentTabKey}
                 setCurrentTab={setCurrentTabKey}
             />
-            <div className={"game-container"}>
+            <div className="game-container">
                 <ScoreContainer
-                    state={state}
+                    state={game.state}
                 />
                 <ContentContainerManager
                     currentTab={currentTabKey}
-                    state={state}
+                    state={game.state}
                 />
             </div>
         </div>
-    )
+    );
 }
+
 
 export default App

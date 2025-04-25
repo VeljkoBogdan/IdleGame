@@ -24,5 +24,5 @@ export function useGameLoop() {
         };
     }, []);
 
-    return { game: gameRef.current, state };
+    return { gameRef, state };
 }
